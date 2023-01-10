@@ -1,13 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="estilo/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-    
+    <nav>
+        <div class="logo">
+            <div class="logo-name">
+                <img src="images/logo.png" alt="logo">
+                <span class="logo_name">YourBrandLogo</span>
+            </div>
+        </div>
+
+        <div class="menu-itens">
+            <ul class="nav-links">
+                <li class="links">
+                    <i class='bx bx-home-alt'></i>
+                    <span class="link_name">Dashboard</span>
+                </li>
+                <li class="links">
+                    <i class='bx bx-book-content'></i>
+                    <span class="link_name">Content</span>
+                </li>
+                <li class="links">
+                    <i class='bx bx-bar-chart-square'></i>
+                    <span class="link_name">Analytics</span>
+                </li>
+                <li class="links">
+                    <i class='bx bx-like' undefined></i>
+                    <span class="link_name">Likes</span>
+                </li>
+                <li class="links">
+                    <i class='bx bx-chat'></i>
+                    <span class="link_name">Comments</span>
+                </li>
+                <li class="links">
+                    <i class='bx bx-share bx-flip-horizontal'></i>
+                    <span class="link_name">Share</span>
+                </li>
+            </ul>
+            <ul class="logout-mode">
+                <li class="links">
+                    <i class='bx bx-log-in'></i>
+                    <span class="link_name">Logout</span>
+                </li>
+                <li class="tema-dark">
+                    <div class="moon"><i class='bx bx-moon'></i></div>
+                    <div class="sun"><i class='bx bx-sun'></i></div>
+                    <span class="titleMode">Dark Mode</span>
+                    <div class="mode-toggle">
+                        <span onclick="alterarTema()" class="switch"></span>
+                    </div>
+            </ul>
+                </li>
+                
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top-dashboard">
+            <i class='bx bx-menu'></i>
+           
+            <div class="input">
+                <i class='bx bx-search'></i>
+                <input type="search" name="pesquisa" id="idpesquisa" placeholder="Digite o que você procura...">
+            </div>
+            <img src="images/user.png" alt="userimg">
+        </div>
+        <div class="dashboard-content">
+            <div class="overview">
+                <div class="title">
+                    <span class="material-icons velocimetro">speed</span>
+                    <span class="text">Dashboard</span>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="box box1">
+                    <i class='bx bx-like' undefined></i>
+                    <span class="text">Total Likes</span>
+                    <span class="number">50,120</span>
+                </div>
+                <div class="box box2">
+                    <i class='bx bx-chat'></i>
+                    <span class="text">Comments</span>
+                    <span class="number">25,120</span>
+                </div>
+                <div class="box box3">
+                    <i class='bx bx-share bx-flip-horizontal'></i>
+                    <span class="text">Total Share</span>
+                    <span class="number">50,320</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
