@@ -25,9 +25,10 @@ body {
 
 nav {
     position: fixed;
-    border-right: 1px solid #9b9b9b;
+    border-right: 1px solid #ccc;
     width: 300px;
     height: 100%;
+    transition: all 0.5s ease-in;
 }
 
 li {
@@ -75,7 +76,8 @@ li {
     cursor: pointer;
 }
 
-.links:hover, body.dark .links:hover {
+.links:hover,
+body.dark .links:hover {
     color: #0B1EAD;
 }
 
@@ -111,6 +113,7 @@ li {
     font-size: 1.2em;
     font-weight: 600;
     color: var(--cor-escritas-nav);
+    transition: all 0.5s ease-in;
 }
 
 .sun {
@@ -124,7 +127,8 @@ li {
     color: #000847;
 }
 
-.bx-moon, .bx-sun {
+.bx-moon,
+.bx-sun {
     font-size: 1.5em;
     padding-right: 15px;
 }
@@ -155,19 +159,63 @@ li {
     transition: 0.4s all ease;
 }
 
+/* ------------------------------- */
+
+.mode {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* CLOSE NAV */
+
+nav.close .mode {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    display: none;
+}
+
+nav.close .mode-toggle {
+    position: relative;
+    left: -18px;
+}
+
+nav.close {
+    width: 80px;
+}
+
+nav.close .logo_name {
+    display: none;
+    transition: all 0.5s ease-in;
+}
+
+nav.close .link_name {
+    pointer-events: none;
+    display: none;
+}
+
+nav.close~.dashboard {
+    width: calc(100% - 80px);
+}
+
+
 
 /* DARK NAV */
 
 :root {
     --bg: #111927;
-    --cor-detalhes-dark: #0B1EAD;
+    --cor-detalhes-dark: rgba(65, 65, 65, 0.76);
     --cor-escritas-Bold-dark: rgb(163, 163, 163);
     --cor-escritas-nav-dark: rgb(158, 158, 158);
-    --cor-escritas-content-dark: rgb(158, 158, 158);
+    --cor-escritas-content-dark: rgb(197, 197, 197);
 }
 
 body.dark {
     background-color: var(--bg);
+    background-image:
+        radial-gradient(at 47% 33%, hsl(232.96, 88%, 36%) 0, transparent 59%),
+        radial-gradient(at 82% 65%, hsl(231.48, 64%, 51%) 0, transparent 55%);
 }
 
 body.dark .switch {
@@ -195,12 +243,18 @@ body.dark .logo_name {
     color: #fff;
 }
 
-body.dark .links, .titleMode {
+body.dark .links,
+.titleMode {
     color: var(--cor-escritas-nav-dark);
 }
 
+body.dark nav.close .switch {
+    position: absolute;
+    left: -8px;
+}
 
-/* DASHBOARD LIGHT/ TOPO */
+
+/* DASHBOARD LIGHT & TOPO */
 
 .dashboard {
     position: relative;
@@ -208,9 +262,11 @@ body.dark .links, .titleMode {
     height: 100vh;
     width: calc(100% - 300px);
     padding: 40px 30px 40px 30px;
+    transition: all 0.7s ease-in-out;
 }
 
 .bx-menu {
+    cursor: pointer;
     font-size: 2.5em;
 }
 
@@ -241,6 +297,7 @@ body.dark .links, .titleMode {
 
 input[type=search] {
     padding-left: 45px;
+    padding-right: 20px;
     border: 1px solid #9b9b9b4b;
     border-radius: 10px;
     height: 50px;
@@ -263,7 +320,7 @@ input[type=search] {
     color: var(--cor-escritas-content);
 }
 
-.velocimetro {
+.icon {
     color: #fff;
     background-color: var(--cor-detalhes);
     border-radius: 6px;
@@ -271,12 +328,43 @@ input[type=search] {
     margin-right: 20px;
 }
 
+/* DARK DASHBOARD */
+
+body.dark .text {
+    color: var(--cor-escritas-content-dark);
+}
+
+body.dark .number {
+    color: var(--cor-escritas-content-dark);
+}
+
+body.dark .dashboard i {
+    color: var(--cor-escritas-content-dark);
+}
+
+body.dark .box {
+    background-color: rgba(65, 65, 65, 0.76);
+}
+
+body.dark .icon {
+    background-color: var(--cor-detalhes-dark);
+}
+
+body.dark input[type=search] {
+    background-color: var(--bg);
+    color: #fff;
+}
+
+body.dark input[type=search]:focus {
+    color: #fff;
+}
+
 /* LIKES, COMMENTS E TOTAL */
 
 .boxes {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
 }
 
 .box {
@@ -311,5 +399,37 @@ input[type=search] {
 .number {
     font-size: 2em;
     font-weight: 400;
+    color: var(--cor-escritas-content);
 }
 
+/* ATIVIDADES RECENTES */
+
+.activity-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-title {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--cor-escritas-content);
+}
+
+.data-list {
+    font-size: 1em;
+    padding-top: 10px;
+}
+
+body.dark .data-title {
+    color: var(--cor-escritas-content-dark);
+}
+
+body.dark .data-list {
+    color: var(--cor-escritas-content-dark);
+}

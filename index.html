@@ -53,21 +53,24 @@
                     <span class="link_name">Logout</span>
                 </li>
                 <li class="tema-dark">
-                    <div class="moon"><i class='bx bx-moon'></i></div>
-                    <div class="sun"><i class='bx bx-sun'></i></div>
-                    <span class="titleMode">Dark Mode</span>
+                    <div class="mode">
+                        <div class="moon"><i class='bx bx-moon'></i></div>
+                        <div class="sun"><i class='bx bx-sun'></i></div>
+                        <span class="titleMode">Dark Mode</span>
+                    </div>
                     <div class="mode-toggle">
                         <span onclick="alterarTema()" class="switch"></span>
                     </div>
-            </ul>
                 </li>
+            </ul>
+                
                 
         </div>
     </nav>
 
     <section class="dashboard">
         <div class="top-dashboard">
-            <i class='bx bx-menu'></i>
+            <i onclick="closeMenu()" class='bx bx-menu'></i>
            
             <div class="input">
                 <i class='bx bx-search'></i>
@@ -78,7 +81,7 @@
         <div class="dashboard-content">
             <div class="overview">
                 <div class="title">
-                    <span class="material-icons velocimetro">speed</span>
+                    <span class="material-icons icon">speed</span>
                     <span class="text">Dashboard</span>
                 </div>
             </div>
@@ -99,6 +102,48 @@
                     <span class="number">50,320</span>
                 </div>
             </div>
+            <div class="activity">
+                <div class="title">
+                    <i class='bx bx-calendar icon'></i>
+                    <span class="text">Recent Activity</span>
+                </div>
+                <div class="activity-data">
+                    <div class="data names">
+                        <span class="data-title">Name</span>
+                        <span class="data-list">Prem Shahi</span>
+                        <span class="data-list">Deepa Chand</span>
+                        <span class="data-list">Manisha Chand</span>
+                        <span class="data-list">Pratima Shahi</span>
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Email</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                    </div>
+                    <div class="data joined">
+                        <span class="data-title">Joined</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-12</span>
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Type</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Status</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Shared</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Shared</span>
+                    </div>
+                </div>
         </div>
 
     </section>
